@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+:root {
+  --background: #e8e8e8;
+  --foreground: #171717;
+  --pill-pink: #f8a5a5;
+  --pill-blue: #4da6ff;
+  --pill-orange: #ff6b35;
+  --pill-yellow: #ffc526;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+  color: #111111;
+  font-family: var(--font-geist-pixel-square), var(--font-geist-sans), 'Inter', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom 3D shadow effects for pills - Enhanced for bigger look */
+.pill-shadow-pink {
+  box-shadow:
+    0 12px 0 0 #d68a8a,
+    0 18px 30px -5px rgba(248, 165, 165, 0.6),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pill-shadow-blue {
+  box-shadow:
+    0 12px 0 0 #3d8ad9,
+    0 18px 30px -5px rgba(77, 166, 255, 0.6),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pill-shadow-orange {
+  box-shadow:
+    0 12px 0 0 #d95a2d,
+    0 18px 30px -5px rgba(255, 107, 53, 0.6),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pill-shadow-yellow {
+  box-shadow:
+    0 12px 0 0 #d9a520,
+    0 18px 30px -5px rgba(255, 197, 38, 0.6),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pill-shadow-purple {
+  box-shadow:
+    0 12px 0 0 #7c3aed,
+    0 18px 30px -5px rgba(168, 85, 247, 0.6),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover animations - Enhanced */
+.pill-hover:hover {
+  transform: translateY(-8px) scale(1.05);
+  filter: brightness(1.08);
+}
+
+.pill-hover:active {
+  transform: translateY(4px) scale(0.96);
+}
+
+/* Contact item hover */
+.contact-item {
+  transition: all 0.2s ease;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(8px);
+}
+
+/* Floating button styles */
+.floating-btn {
+  transition: all 0.2s ease;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation keyframes - Subtle floating */
+@keyframes float-subtle {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(var(--rotation, 0deg));
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(var(--rotation, 0deg));
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+}
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Floating animation classes */
+.animate-float-subtle {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+.animate-float-subtle-1 {
+  animation: float-subtle 4s ease-in-out infinite 0s;
+}
+
+.animate-float-subtle-2 {
+  animation: float-subtle 4.2s ease-in-out infinite 0.3s;
+}
+
+.animate-float-subtle-3 {
+  animation: float-subtle 3.8s ease-in-out infinite 0.6s;
+}
+
+.animate-float-subtle-4 {
+  animation: float-subtle 4.4s ease-in-out infinite 0.9s;
+}
+
+.animate-float-subtle-5 {
+  animation: float-subtle 4s ease-in-out infinite 1.2s;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out infinite 0.5s;
+}
+
+.animate-float-delayed-2 {
+  animation: float 3s ease-in-out infinite 1s;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
